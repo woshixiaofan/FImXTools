@@ -32,7 +32,7 @@
     [self.view addSubview:self.tableView];
     self.title=@"Hello world";
     
-    self.dataArray=[NSArray arrayWithObjects:@"PlaceHolderController",@"SDCycleController",@"XMNetController",@"TTTAttributedLabelController",@"CollectionController",@"UMLoginController",@"VoiceController",@"IOS10LabelController",@"TestLabelController",@"LabelController",@"AlertController",@"PickerController",@"DatePickerController",@"MohuController",@"ErweimaController",@"SVGController",@"ReadBookController",@"ShareController",@"FontViewController",nil];
+    self.dataArray=[NSArray arrayWithObjects:@"PlaceHolderController",@"SDCycleController",@"XMNetController",@"TTTAttributedLabelController",@"CollectionController",@"UMLoginController",@"VoiceController",@"IOS10LabelController",@"LabelController",@"AlertController",@"PickerController",@"DatePickerController",@"MohuController",@"ErweimaController",@"SVGController",@"ReadBookController",@"ShareController",@"FontViewController",nil];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

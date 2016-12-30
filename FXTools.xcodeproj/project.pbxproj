@@ -21,7 +21,6 @@
 		E16D2EC81E08DFDA00B9638A /* ZXVideoPlayerBrightnessView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D2EC11E08DFDA00B9638A /* ZXVideoPlayerBrightnessView.m */; };
 		E16D2EC91E08DFDA00B9638A /* ZXVideoPlayerVolumeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D2EC31E08DFDA00B9638A /* ZXVideoPlayerVolumeView.m */; };
 		E16D2ECA1E08DFDA00B9638A /* IOS10LabelController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D2EC51E08DFDA00B9638A /* IOS10LabelController.m */; };
-		E16D2ECB1E08DFDA00B9638A /* TestLabelController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D2EC71E08DFDA00B9638A /* TestLabelController.m */; };
 		E16D2ECE1E08DFEE00B9638A /* ShareController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D2ECD1E08DFEE00B9638A /* ShareController.m */; };
 		E16D2EE31E08E00600B9638A /* ReadBookController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D2ED01E08E00600B9638A /* ReadBookController.m */; };
 		E16D2EE41E08E00600B9638A /* FontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D2ED21E08E00600B9638A /* FontViewController.m */; };
@@ -70,7 +69,6 @@
 		E1CED8F01E0BB97A0078F3D8 /* ZXVideoPlayerBrightnessView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D2EC11E08DFDA00B9638A /* ZXVideoPlayerBrightnessView.m */; };
 		E1CED8F11E0BB97A0078F3D8 /* ZXVideoPlayerVolumeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D2EC31E08DFDA00B9638A /* ZXVideoPlayerVolumeView.m */; };
 		E1CED8F21E0BB97A0078F3D8 /* IOS10LabelController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D2EC51E08DFDA00B9638A /* IOS10LabelController.m */; };
-		E1CED8F31E0BB97A0078F3D8 /* TestLabelController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D2EC71E08DFDA00B9638A /* TestLabelController.m */; };
 		E1CED8F41E0BB97A0078F3D8 /* ReadBookController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D2ED01E08E00600B9638A /* ReadBookController.m */; };
 		E1CED8F51E0BB97A0078F3D8 /* FontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D2ED21E08E00600B9638A /* FontViewController.m */; };
 		E1CED8F61E0BB97A0078F3D8 /* ErweimaController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D2ED61E08E00600B9638A /* ErweimaController.m */; };
@@ -136,8 +134,6 @@
 		E16D2EC31E08DFDA00B9638A /* ZXVideoPlayerVolumeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXVideoPlayerVolumeView.m; sourceTree = "<group>"; };
 		E16D2EC41E08DFDA00B9638A /* IOS10LabelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOS10LabelController.h; sourceTree = "<group>"; };
 		E16D2EC51E08DFDA00B9638A /* IOS10LabelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOS10LabelController.m; sourceTree = "<group>"; };
-		E16D2EC61E08DFDA00B9638A /* TestLabelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLabelController.h; sourceTree = "<group>"; };
-		E16D2EC71E08DFDA00B9638A /* TestLabelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestLabelController.m; sourceTree = "<group>"; };
 		E16D2ECC1E08DFEE00B9638A /* ShareController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareController.h; sourceTree = "<group>"; };
 		E16D2ECD1E08DFEE00B9638A /* ShareController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareController.m; sourceTree = "<group>"; };
 		E16D2ECF1E08E00600B9638A /* ReadBookController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadBookController.h; sourceTree = "<group>"; };
@@ -380,8 +376,6 @@
 				E16D2EC31E08DFDA00B9638A /* ZXVideoPlayerVolumeView.m */,
 				E16D2EC41E08DFDA00B9638A /* IOS10LabelController.h */,
 				E16D2EC51E08DFDA00B9638A /* IOS10LabelController.m */,
-				E16D2EC61E08DFDA00B9638A /* TestLabelController.h */,
-				E16D2EC71E08DFDA00B9638A /* TestLabelController.m */,
 				E16D2ECF1E08E00600B9638A /* ReadBookController.h */,
 				E16D2ED01E08E00600B9638A /* ReadBookController.m */,
 				E16D2ED11E08E00600B9638A /* FontViewController.h */,
@@ -664,7 +658,6 @@
 				E1A4DB901E14AEC000548E88 /* PlaceHolderController.m in Sources */,
 				E16D30641E08E19200B9638A /* TestLabel.m in Sources */,
 				E16D2EE31E08E00600B9638A /* ReadBookController.m in Sources */,
-				E16D2ECB1E08DFDA00B9638A /* TestLabelController.m in Sources */,
 				E16D2EEC1E08E00600B9638A /* AlertController.m in Sources */,
 				E1CED8B51E0BB13A0078F3D8 /* CollectionViewCell.m in Sources */,
 				E16D2EE81E08E00600B9638A /* DatePickerController.m in Sources */,
@@ -683,7 +676,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1CED8F31E0BB97A0078F3D8 /* TestLabelController.m in Sources */,
 				E1CED8FC1E0BB97A0078F3D8 /* AlertController.m in Sources */,
 				E1CED8F51E0BB97A0078F3D8 /* FontViewController.m in Sources */,
 				E1CED8F21E0BB97A0078F3D8 /* IOS10LabelController.m in Sources */,
