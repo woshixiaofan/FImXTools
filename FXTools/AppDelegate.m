@@ -27,6 +27,7 @@
     RootViewController *rootVC = [[RootViewController alloc]init];
     UINavigationController*naVC = [[UINavigationController alloc]initWithRootViewController:rootVC];
     self.window.rootViewController=naVC;
+    
     [self appearance];
 
     [[UMSocialManager defaultManager] setUmSocialAppkey:UM_AppKey];
