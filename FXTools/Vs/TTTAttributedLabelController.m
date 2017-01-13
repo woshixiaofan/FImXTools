@@ -19,69 +19,50 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSInteger numLine=0;
+    
     TTTAttributedLabel *label = [[TTTAttributedLabel alloc] initWithFrame:CGRectMake(20, 20, WIDTH-40, HEIGHT-40-64)];
     
     label.delegate = self;
     label.font = [UIFont systemFontOfSize:18];
-    label.numberOfLines = 10;
+    label.numberOfLines = numLine;
     [self.view addSubview:label];
     label.backgroundColor=[UIColor lightGrayColor];
     label.textColor = [UIColor redColor];
-    ///Users/fanxun/Desktop/MyTools
     
-    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:TEXT
-                                                                    attributes:[self coreTextAttributes]];
-    label.text=attString;
+    label.text=TEXT;
     
     //检测url
     label.enabledTextCheckingTypes = NSTextCheckingTypeLink|NSTextCheckingTypePhoneNumber;
-    //设置高亮颜色
-    label.highlightedTextColor = [UIColor greenColor];
+
+    
     //对齐方式(垂直)
-    label.verticalAlignment = TTTAttributedLabelVerticalAlignmentTop;
+//    label.verticalAlignment = TTTAttributedLabelVerticalAlignmentTop;
+    label.firstLineIndent=0;
     //行间距
     label.lineSpacing = 2;
     //段首行
-    label.firstLineIndent=0;
     //文字内缩
     label.textInsets=UIEdgeInsetsMake(0, 0, 0, 0);
     label.textAlignment=NSTextAlignmentJustified;
     
     //URL下划线
-    label.linkAttributes = @{NSUnderlineStyleAttributeName:[NSNumber numberWithInt:NSUnderlineStyleNone],NSForegroundColorAttributeName:[UIColor blackColor]};
+    label.linkAttributes = @{NSUnderlineStyleAttributeName:[NSNumber numberWithInt:NSUnderlineStyleNone],NSForegroundColorAttributeName:[UIColor orangeColor]};
+    //链接高亮状态文本属性
+    label.activeLinkAttributes = @{NSForegroundColorAttributeName:[UIColor blackColor],NSUnderlineStyleAttributeName:@(1)};
     
-    [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO] forKey:(NSString *)kCTUnderlineStyleAttributeName];
-
-    //设置阴影
-//    label.shadowColor = [UIColor magentaColor];
-    
+    __weak typeof(label)myLabel=label;
     [label setText:label.text afterInheritingLabelAttributesAndConfiguringWithBlock:^ NSMutableAttributedString *(NSMutableAttributedString *mutableAttributedString)
      {
-         //设置可点击文字的范围
-         NSRange boldRange = [[mutableAttributedString string] rangeOfString:@"毁天灭地" options:NSCaseInsensitiveSearch];
-         
-         //设定可点击文字的的大小
-         UIFont *boldSystemFont = [UIFont boldSystemFontOfSize:14];
-         CTFontRef font = CTFontCreateWithName((__bridge CFStringRef)boldSystemFont.fontName, boldSystemFont.pointSize, NULL);
-         
-         if (font) {
-             
-             //设置可点击文本的大小
-             [mutableAttributedString addAttribute:(NSString *)kCTFontAttributeName value:(__bridge id)font range:boldRange];
-             
-             //设置可点击文本的颜色
-             [mutableAttributedString addAttribute:(NSString*)kCTForegroundColorAttributeName value:(id)[[UIColor blueColor] CGColor] range:boldRange];
-             
-             
-             
-             CFRelease(font);
-             
-         }
+         CGSize size = [TTTAttributedLabel sizeThatFitsAttributedString:mutableAttributedString withConstraints:CGSizeMake(myLabel.width, 0) limitedToNumberOfLines:numLine];
+         NSLog(@"NSStringFromCGSize ***  %@",NSStringFromCGSize(size));
+         myLabel.frame=CGRectMake(myLabel.left, myLabel.top, myLabel.width, size.height);
          return mutableAttributedString;
      }];
     
-    
-    
+    NSRange boldRange1 = [label.text rangeOfString:@"毁天灭地" options:NSCaseInsensitiveSearch];
+    [label addLinkToURL:[NSURL URLWithString:@"http://www.baidu.com"]
+              withRange:boldRange1];
     
 }
 

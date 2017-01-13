@@ -9,6 +9,7 @@
 #import "ShareController.h"
 #import "Header.h"
 #import <Social/Social.h>
+#import "UIColor+Extension.h"
 @interface ShareController ()
 
 @end
@@ -18,21 +19,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIButton *button = [UIButton buttonWithType:0];
-    button.frame = CGRectMake(100, 30, WIDTH-200, 50);
-    [self.view addSubview:button];
-    button.backgroundColor=DEBUG_COLOR;
+    NSLog(@"navigationController     %@",self.navigationController);
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(50, 50, WIDTH-100, 50);
+    button.backgroundColor=[UIColor orangeColor];
     [button setTitle:@"分享" forState:UIControlStateNormal];
     [button addTarget:self action:@selector(share123) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    NSLog(@"%@",self.navigationController);
-    
+    button.layer.cornerRadius=4;
+    button.layer.masksToBounds=YES;
+    [self.view addSubview:button];
     
     // Do any additional setup after loading the view.
 }
-- (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"---++++++++---%@",self.navigationController);
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    UIImage *image = [[UIColor blueColor] imageWithColor];
+    [self.navigationController.navigationBar setBackgroundImage:image  forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = image;
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
 }
 
 - (void)share123 {

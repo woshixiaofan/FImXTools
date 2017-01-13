@@ -9,10 +9,14 @@
 #import "LabelController.h"
 #import "IMLabel.h"
 #import "Header.h"
+#import <CoreText/CoreText.h>
 
 #define LINESPACE   5
-#define TEXTFONT    15
+#define TEXTFONT    17
 @interface LabelController ()
+{
+    CTFrameRef _ctFrame;
+}
 @property (nonatomic, strong)IMLabel *label1;
 @property (nonatomic, strong)IMLabel *label2;
 @property (nonatomic, strong)IMLabel *label3;
@@ -39,27 +43,82 @@
     _label3.frame=CGRectMake(KLEFT, KLEFT+_label2.bottom, WIDTH-2*KLEFT, [_label3 getAttributedStringHeightWidthValue:WIDTH-2*KLEFT]);
     _label4.frame=CGRectMake(KLEFT, KLEFT+_label3.bottom, WIDTH-2*KLEFT, [_label4 getAttributedStringHeightWidthValue:WIDTH-2*KLEFT]);
     
-}
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    CGPoint point   = [[touches anyObject] locationInView:self.label4];
-    NSLog(@"%.2f",point.x);
     
-    //    CFIndex idx     = [self characterIndexAtPoint:point];
-    //    self.activeLink = [self linkAtCharacterIndex:idx];
-    //
-    //    if (!self.activeLink)
-    //    {
-    //        [super touchesBegan:touches withEvent:event];
-    //    }
+    UITapGestureRecognizer *tapRecognizer2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapReadView:)];
+    _label1.userInteractionEnabled=YES;
+    [_label1 addGestureRecognizer:tapRecognizer2];
+    
+    
+    NSRange boldRange1 = [_label1.text rangeOfString:@"穿越到武道世界" options:NSCaseInsensitiveSearch];
+    
+    NSLog(@"---   %@",NSStringFromRange(boldRange1));
+    
 }
+-(void)tapReadView:(UITapGestureRecognizer *)tap
+{
+    CGPoint point = [tap locationInView:_label1];
+    
+    CFIndex idx     = [self getTouchIndexWithTouchPoint:point];
+    
+    if (idx>=3) {
+        NSLog(@"%@  %@",@(idx),[_label1.text substringWithRange:NSMakeRange(idx-3, 2)]);
+    }
+    
+}
+- (CTFrameRef)getCTFrame
+{
+    return _ctFrame;
+}
+- (CFIndex)getTouchIndexWithTouchPoint:(CGPoint)touchPoint
+{
+    CTFramesetterRef frameSetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef) [[NSAttributedString alloc]initWithString:_label1.text]);
+    CGPathRef path = CGPathCreateWithRect(_label1.frame, NULL);;
+    _ctFrame = CTFramesetterCreateFrame(frameSetter, CFRangeMake(0, 0), path, NULL);
+    
+    CTFrameRef textFrame = [self getCTFrame];
+    NSArray *lines = (NSArray*)CTFrameGetLines(textFrame);
+    if (!lines)
+    {
+        return -1;
+    }
+    CFIndex index = -1;
+    NSInteger lineCount = [lines count];
+    CGPoint *origins = (CGPoint*)malloc(lineCount * sizeof(CGPoint));
+    if (lineCount != 0)
+    {
+        CTFrameGetLineOrigins(_ctFrame, CFRangeMake(0, 0), origins);
+        
+        for (int i = 0; i < lineCount; i++)
+        {
+            
+            CGPoint baselineOrigin = origins[i];
+            baselineOrigin.y = CGRectGetHeight(_label1.frame) - baselineOrigin.y;
+            
+            CTLineRef line = (__bridge CTLineRef)[lines objectAtIndex:i];
+            CGFloat ascent, descent;
+            CGFloat lineWidth = CTLineGetTypographicBounds(line, &ascent, &descent, NULL);
+            
+            CGRect lineFrame = CGRectMake(baselineOrigin.x, baselineOrigin.y - ascent, lineWidth, ascent + descent);
+            if (CGRectContainsPoint(lineFrame, touchPoint))
+            {
+                index = CTLineGetStringIndexForPosition(line, touchPoint);
+            }else if (lineFrame.origin.y <touchPoint.y)
+            {
+                index = CTLineGetStringIndexForPosition(line, touchPoint);
+            }
+        }
+    }
+    free(origins);
+    return index;
+}
+
 - (IMLabel *)label1 {
     if (!_label1) {
         self.label1 = [[IMLabel alloc]init];
         _label1.numberOfLines=0;
         _label1.font=[UIFont systemFontOfSize:TEXTFONT];
         _label1.backgroundColor=DEBUG_COLOR;
-        _label1.linesSpacing=LINESPACE;
+//        _label1.linesSpacing=LINESPACE;
         _label1.firstLineHeadIndent=_label1.font.pointSize*2;
         
     }

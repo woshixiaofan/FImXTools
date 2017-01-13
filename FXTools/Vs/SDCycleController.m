@@ -9,6 +9,8 @@
 #import "SDCycleController.h"
 #import <SDCycleScrollView.h>
 #import "Header.h"
+#import "UIControl+recurClick.h"
+#import "UIButton+touch.h"
 @interface SDCycleController ()<SDCycleScrollViewDelegate>
 
 @end
@@ -30,7 +32,26 @@
     
     [self.view addSubview:scrollView];
     
-    // Do any additional setup after loading the view.
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(50, scrollView.bottom+50, WIDTH-100, 50);
+    [button setTitle:@"连击测试11" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(clickTest) forControlEvents:UIControlEventTouchUpInside];
+    button.fx_acceptEventInterval = 1.0;
+    button.backgroundColor=[[UIColor orangeColor]colorWithAlphaComponent:0.86];
+    [self.view addSubview:button];
+    
+    
+    UIButton *buttonTest = [UIButton buttonWithType:UIButtonTypeCustom];
+    buttonTest.frame = CGRectMake(50, button.bottom+50, WIDTH-100, 50);
+    [buttonTest setTitle:@"连击测试22" forState:UIControlStateNormal];
+    [buttonTest addTarget:self action:@selector(clickTest) forControlEvents:UIControlEventTouchUpInside];
+    buttonTest.timeInterval = 1.0;
+    buttonTest.backgroundColor=[UIColor orangeColor];
+    [self.view addSubview:buttonTest];
+    
+}
+- (void)clickTest {
+    NSLog(@"----------------------");
 }
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
@@ -39,7 +60,7 @@
 }
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didScrollToIndex:(NSInteger)index{
-    NSLog(@"%@",@(index));
+    //NSLog(@"%@",@(index));
 }
 
 - (void)didReceiveMemoryWarning {

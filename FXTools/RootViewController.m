@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "Header.h"
+#import "UIColor+Extension.h"
 
 @interface RootViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -32,7 +33,7 @@
     [self.view addSubview:self.tableView];
     self.title=@"Hello world";
     
-    self.dataArray=[NSArray arrayWithObjects:@"PlaceHolderController",@"SDCycleController",@"XMNetController",@"TTTAttributedLabelController",@"CollectionController",@"UMLoginController",@"VoiceController",@"IOS10LabelController",@"LabelController",@"AlertController",@"PickerController",@"DatePickerController",@"MohuController",@"ErweimaController",@"SVGController",@"ReadBookController",@"ShareController",@"FontViewController",nil];
+    self.dataArray=[NSArray arrayWithObjects:@"KeyboardController",@"NavBarController",@"CornerController",@"PlaceHolderController",@"SDCycleController",@"TTTAttributedLabelController",@"CollectionController",@"UMLoginController",@"VoiceController",@"LabelController",@"AlertController",@"PickerController",@"DatePickerController",@"MohuController",@"ErweimaController",@"ReadBookController",@"ShareController",nil];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -56,9 +57,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *title=self.dataArray[indexPath.row];
     UIViewController *subViewController = [[NSClassFromString(title) alloc] init];
-    subViewController.view.backgroundColor=[UIColor whiteColor];
+    if (![title isEqualToString:@"NavBarController"]) {
+        subViewController.view.backgroundColor=[UIColor whiteColor];
+    }
     subViewController.title = title;
     [self.navigationController pushViewController:(UIViewController*)subViewController animated:YES];
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -74,10 +74,12 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
   install_resource "UMengUShare/UShareSDK/SocialLibraries/QQ/TencentOpenApi_IOS_Bundle.bundle"
   install_resource "UMengUShare/UShareSDK/SocialLibraries/Sina/WeiboSDK.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
   install_resource "UMengUShare/UShareSDK/SocialLibraries/QQ/TencentOpenApi_IOS_Bundle.bundle"
   install_resource "UMengUShare/UShareSDK/SocialLibraries/Sina/WeiboSDK.bundle"
 fi

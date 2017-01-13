@@ -10,7 +10,8 @@
 #import "RootViewController.h"
 #import "Header.h"
 #import <UMSocialCore/UMSocialCore.h>
-
+#import "UIColor+Extension.h"
+#import <IQKeyboardManager.h>
 @interface AppDelegate ()
 
 @end
@@ -28,12 +29,24 @@
     UINavigationController*naVC = [[UINavigationController alloc]initWithRootViewController:rootVC];
     self.window.rootViewController=naVC;
     
+    UIImage *image = [[UIColor redColor] imageWithColor];
+    [naVC.navigationBar setBackgroundImage:image  forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    naVC.navigationBar.shadowImage = image;
     [self appearance];
-
+    
     [[UMSocialManager defaultManager] setUmSocialAppkey:UM_AppKey];
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:QQ_AppID  appSecret:QQ_AppKey redirectURL:UM_Login_URL];
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:WX_AppID  appSecret:WX_AppSecret redirectURL:UM_Login_URL];
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:XL_AppKey  appSecret:XL_AppSecret redirectURL:XL_url];
+    
+    ////Users/fanxun/Desktop/ImTools
+    
+    [IQKeyboardManager sharedManager].enable = YES;
+    //如果产品需要当键盘弹起时，点击背景收起键盘，也是一行代码解决。
+    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+    //而当产品需要支持内联编辑(Inline Editing), 这就需要隐藏键盘上的工具条(默认打开)
+    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
+    
     
     return YES;
 }
@@ -47,7 +60,7 @@
 }
 
 - (void)appearance {
-    [[UINavigationBar appearance] setBarTintColor:[K_BarColor colorWithAlphaComponent:0.1]];
+//    [[UINavigationBar appearance] setBarTintColor:[K_BarColor colorWithAlphaComponent:0.1]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:19]}];
     [UINavigationBar appearance].tintColor = [UIColor whiteColor];
     UIImage *backimage=[[UIImage imageNamed:@"icon_back"] imageWithAlignmentRectInsets:UIEdgeInsetsMake(0, 0, -3, 0)];
@@ -57,11 +70,11 @@
     {
         [UINavigationBar appearance].translucent = NO;
     }
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage new]  forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
-    [UINavigationBar appearance].shadowImage = [UIImage new];
     
     [[UITextField appearance] setTintColor:K_BarColor];
     [[UITextView appearance] setTintColor:K_BarColor];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    self.window.windowLevel=UIWindowLevelNormal;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

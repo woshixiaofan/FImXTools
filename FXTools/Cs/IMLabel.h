@@ -16,7 +16,7 @@
 @property(nonatomic,assign) CGFloat firstLineHeadIndent;
 @property(nonatomic,assign) CGFloat linesSpacing;
 @property(nonatomic,strong) NSDictionary *labelDic;
-
+@property(nonatomic,assign)NSTextAlignment alignment;
 - (double)getAttributedStringHeightWidthValue:(double)width;
 
 @end
