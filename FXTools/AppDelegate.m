@@ -39,7 +39,6 @@
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:WX_AppID  appSecret:WX_AppSecret redirectURL:UM_Login_URL];
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:XL_AppKey  appSecret:XL_AppSecret redirectURL:XL_url];
     
-    //********//Users/fanxun/Desktop/ImTools
     
     [IQKeyboardManager sharedManager].enable = YES;
     //如果产品需要当键盘弹起时，点击背景收起键盘，也是一行代码解决。
