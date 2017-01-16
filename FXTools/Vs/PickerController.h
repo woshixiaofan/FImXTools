@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PickerController : UIViewController<UIPickerViewDataSource,UIPickerViewDelegate>
-@property(nonatomic,retain)UIPickerView * pickerView;
+@interface PickerController : UIViewController
 
 @end

@@ -48,7 +48,6 @@
 		E16D2F0B1E08E07200B9638A /* zx-video-player-brightness@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E16D2F001E08E07200B9638A /* zx-video-player-brightness@3x.png */; };
 		E16D2F0C1E08E07200B9638A /* Chapter1.txt in Resources */ = {isa = PBXBuildFile; fileRef = E16D2F011E08E07200B9638A /* Chapter1.txt */; };
 		E16D30641E08E19200B9638A /* TestLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D30631E08E19200B9638A /* TestLabel.m */; };
-		E16D30661E08E29900B9638A /* Provineces.plist in Resources */ = {isa = PBXBuildFile; fileRef = E16D30651E08E29900B9638A /* Provineces.plist */; };
 		E1A4DB811E13AADA00548E88 /* SDCycleController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A4DB801E13AADA00548E88 /* SDCycleController.m */; };
 		E1A4DB871E13ACA200548E88 /* 002.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A4DB861E13ACA200548E88 /* 002.png */; };
 		E1A4DB891E13ACA700548E88 /* 003.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A4DB881E13ACA700548E88 /* 003.png */; };
@@ -79,6 +78,8 @@
 		E1CED8F91E0BB97A0078F3D8 /* PickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D2EDC1E08E00600B9638A /* PickerController.m */; };
 		E1CED8FA1E0BB97A0078F3D8 /* LabelController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D2EDE1E08E00600B9638A /* LabelController.m */; };
 		E1CED8FC1E0BB97A0078F3D8 /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D2EE21E08E00600B9638A /* AlertController.m */; };
+		E1F538121E2CACCC00997E3A /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1F538111E2CACCC00997E3A /* city.plist */; };
+		E1F538151E2CADDD00997E3A /* PSCityPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F538141E2CADDD00997E3A /* PSCityPickerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,7 +178,6 @@
 		E16D2F011E08E07200B9638A /* Chapter1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chapter1.txt; sourceTree = "<group>"; };
 		E16D30621E08E19200B9638A /* TestLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLabel.h; sourceTree = "<group>"; };
 		E16D30631E08E19200B9638A /* TestLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestLabel.m; sourceTree = "<group>"; };
-		E16D30651E08E29900B9638A /* Provineces.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Provineces.plist; sourceTree = "<group>"; };
 		E1A4DB7F1E13AADA00548E88 /* SDCycleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleController.h; sourceTree = "<group>"; };
 		E1A4DB801E13AADA00548E88 /* SDCycleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleController.m; sourceTree = "<group>"; };
 		E1A4DB861E13ACA200548E88 /* 002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 002.png; sourceTree = "<group>"; };
@@ -206,6 +206,9 @@
 		E1CED8B31E0BB13A0078F3D8 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		E1CED8B41E0BB13A0078F3D8 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		E1CED8D11E0BB9180078F3D8 /* libMyToolSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMyToolSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1F538111E2CACCC00997E3A /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
+		E1F538131E2CADDD00997E3A /* PSCityPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCityPickerView.h; sourceTree = "<group>"; };
+		E1F538141E2CADDD00997E3A /* PSCityPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCityPickerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,7 +294,7 @@
 				E16D2E921E08DD4000B9638A /* Assets.xcassets */,
 				E16D2E941E08DD4000B9638A /* LaunchScreen.storyboard */,
 				E16D2E971E08DD4000B9638A /* Info.plist */,
-				E16D30651E08E29900B9638A /* Provineces.plist */,
+				E1F538111E2CACCC00997E3A /* city.plist */,
 				E16D2E8C1E08DD4000B9638A /* Supporting Files */,
 			);
 			path = FXTools;
@@ -323,6 +326,8 @@
 				E16D30631E08E19200B9638A /* TestLabel.m */,
 				E1CED8B31E0BB13A0078F3D8 /* CollectionViewCell.h */,
 				E1CED8B41E0BB13A0078F3D8 /* CollectionViewCell.m */,
+				E1F538131E2CADDD00997E3A /* PSCityPickerView.h */,
+				E1F538141E2CADDD00997E3A /* PSCityPickerView.m */,
 			);
 			path = Cs;
 			sourceTree = "<group>";
@@ -559,8 +564,8 @@
 			files = (
 				E16D2F071E08E07200B9638A /* zx-video-player-volume@3x.png in Resources */,
 				E16D2F081E08E07200B9638A /* zx-video-player-volumeMute@2x.png in Resources */,
+				E1F538121E2CACCC00997E3A /* city.plist in Resources */,
 				E1A4DB8D1E13ACBC00548E88 /* 005.png in Resources */,
-				E16D30661E08E29900B9638A /* Provineces.plist in Resources */,
 				E16D2E931E08DD4000B9638A /* Assets.xcassets in Resources */,
 				E16D2F091E08E07200B9638A /* zx-video-player-volumeMute@3x.png in Resources */,
 				E16D2F031E08E07200B9638A /* icon_8@2x.svg in Resources */,
@@ -674,6 +679,7 @@
 				E16D2EE31E08E00600B9638A /* ReadBookController.m in Sources */,
 				E16D2EEC1E08E00600B9638A /* AlertController.m in Sources */,
 				E1086D0B1E237101009E3E97 /* KeyboardController.m in Sources */,
+				E1F538151E2CADDD00997E3A /* PSCityPickerView.m in Sources */,
 				E1C63D3C1E1B8662009BE802 /* CALayer+PauseAimate.m in Sources */,
 				E1CED8B51E0BB13A0078F3D8 /* CollectionViewCell.m in Sources */,
 				E16D2EE81E08E00600B9638A /* DatePickerController.m in Sources */,

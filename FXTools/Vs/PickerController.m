@@ -7,95 +7,54 @@
 //
 
 #import "PickerController.h"
+#import "PSCityPickerView.h"
+#import "UIView+corners.h"
+#import "Header.h"
+@interface PickerController ()<PSCityPickerViewDelegate>
+@property (strong, nonatomic) PSCityPickerView *cityPicker;
+@property (strong, nonatomic) UITextField *textField;
 
-@interface PickerController ()
-@property(nonatomic,retain)NSMutableArray * provincesArray;
-
-@property(nonatomic,retain)NSMutableArray * cityArray;
 @end
 
 @implementation PickerController
 
-- (void)viewDidLoad {
+#pragma mark - Life cycle
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    NSString * string = [[NSBundle mainBundle] pathForResource:@"Provineces" ofType:@"plist"];
-    
-    self.provincesArray = [NSMutableArray arrayWithContentsOfFile:string];
-    
-    self.pickerView = [[UIPickerView alloc] initWithFrame:self.view.bounds];
-    _pickerView.dataSource = self;
-    _pickerView.delegate = self;
-    [self.view addSubview:_pickerView];
+    self.textField = [[UITextField alloc]initWithFrame:CGRectMake(50, 120, WIDTH-100, 50)];
+    _textField.attributedPlaceholder=[[NSAttributedString alloc]initWithString:@"省 市 县" attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:20]}];
+    [_textField setStyle:666 cornerRedius:4];
+    _textField.backgroundColor=[UIColor orangeColor];
+    _textField.font=[UIFont systemFontOfSize:20];
+    [self.view addSubview:_textField];
+    self.textField.inputView = self.cityPicker;
 }
 
-//确定picker的轮子个数
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+#pragma mark - PSCityPickerViewDelegate
+- (void)cityPickerView:(PSCityPickerView *)picker
+    finishPickProvince:(NSString *)province
+                  city:(NSString *)city
+              district:(NSString *)district
 {
-    return 2;
+    [self.textField setText:[NSString stringWithFormat:@"%@ %@ %@",province,city,district]];
 }
 
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+#pragma mark - Getter and Setter
+- (PSCityPickerView *)cityPicker
 {
-    if (component ==0) {
-        //省份个数
-        return self.provincesArray.count;
+    if (!_cityPicker)
+    {
+        _cityPicker = [[PSCityPickerView alloc] init];
+        _cityPicker.cityPickerDelegate = self;
     }
-    //城市个数
-    return self.cityArray.count;
+    return _cityPicker;
 }
-
-
-//根据指定的组件和行号返回该行的标题，即应向用户显示的字符串
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    //确定每个轮子上的内容
-    if (component == 0) {
-        //选择省份
-        return [[self.provincesArray objectAtIndex:row] objectForKey:@"ProvinceName"];
-    }else{
-        //选择城市
-        return [[self.cityArray objectAtIndex:row] objectForKey:@"CityName"];
-    }
-}
-
-
-//当用户在选择器中做出选择时，将调用该委托方法，并向它传递用户选择的行号以及用户最后触摸的组件
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    if (component ==0) {
-        self.cityArray =[[ self.provincesArray objectAtIndex:row ] objectForKey:@"cities"];
-        [self.pickerView selectRow:0 inComponent:1 animated:YES];
-        [self.pickerView reloadComponent:1];
-    }
-}
-
-
-//改变字体大小,底色,位置
-- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
-{
-    //创建一个label
-    UILabel * pickerLabel = (UILabel *) view;
-    if (!pickerLabel) {
-        pickerLabel = [[UILabel alloc] init];
-        pickerLabel.adjustsFontSizeToFitWidth = YES;
-        pickerLabel.textAlignment = NSTextAlignmentCenter;
-        pickerLabel.backgroundColor = [UIColor cyanColor];
-        pickerLabel.font = [UIFont systemFontOfSize:15];
-    }
-    //把label贴上
-    pickerLabel.text = [self pickerView:pickerView titleForRow:row forComponent:component];
-    return pickerLabel;
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 /*
-#pragma mark - Navigation
+ #pragma mark - Navigation
 
+2017-01-16 15:48:47.780 FXTools[403:18681] APIBase request didFailWithError
+2017-01-16 15:48:47.781 FXTools[403:18681] APIBase request didFailWithError
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].

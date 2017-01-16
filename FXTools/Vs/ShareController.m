@@ -58,7 +58,7 @@
     SLComposeViewController *composeVc=[SLComposeViewController composeViewControllerForServiceType:SLServiceTypeSinaWeibo];
     [composeVc setInitialText:@"艾美阅读"];
     [composeVc addImage:[UIImage imageNamed:@"mohuImage"]];
-    [composeVc addURL:[NSURL URLWithString:@"http://www.imread.com"]];
+    [composeVc addURL:[NSURL URLWithString:@"https://www.imread.com"]];
     
     [self presentViewController:composeVc animated:YES completion:nil];
     
