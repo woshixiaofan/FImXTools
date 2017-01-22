@@ -45,9 +45,7 @@
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
     //而当产品需要支持内联编辑(Inline Editing), 这就需要隐藏键盘上的工具条(默认打开)
     [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
-    
-    //提交成功
-    
+        
     return YES;
 }
 
