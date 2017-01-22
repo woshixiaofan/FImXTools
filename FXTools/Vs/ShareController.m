@@ -49,7 +49,7 @@
     activeViewController.excludedActivityTypes = @[UIActivityTypeAirDrop,UIActivityTypeAssignToContact,UIActivityTypePrint,UIActivityTypePostToTwitter,UIActivityTypePostToFacebook,UIActivityTypePostToFlickr,UIActivityTypePostToVimeo];
     
     [self presentViewController:activeViewController animated:YES completion:nil];
-    activeViewController.completionWithItemsHandler = ^(UIActivityType type,BOOL completed,NSArray * returnedItems,NSError * activityError){
+    activeViewController.completionWithItemsHandler = ^(UIActivityType type,BOOL completed,NSArray * returnedItems,NSError * activityError) {
         
     };
 }

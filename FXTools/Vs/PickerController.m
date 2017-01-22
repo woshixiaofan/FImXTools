@@ -24,7 +24,11 @@
     [super viewDidLoad];
     self.textField = [[UITextField alloc]initWithFrame:CGRectMake(50, 120, WIDTH-100, 50)];
     _textField.attributedPlaceholder=[[NSAttributedString alloc]initWithString:@"省 市 县" attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:20]}];
+<<<<<<< HEAD
     [_textField setStyle:666 cornerRedius:4];
+=======
+    [_textField setConnerType:CONNERTYPE_All cornerRedius:4];
+>>>>>>> master
     _textField.backgroundColor=[UIColor orangeColor];
     _textField.font=[UIFont systemFontOfSize:20];
     [self.view addSubview:_textField];

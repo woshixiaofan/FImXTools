@@ -9,42 +9,57 @@
 #import "UIView+corners.h"
 
 @implementation UIView (corners)
-- (void)setStyle:(int)style cornerRedius:(double)redius {
+- (void)setConnerType:(CONNERTYPE)type cornerRedius:(double)redius {
     UIRectCorner corners;
     
-    switch ( style )
+    switch ( type )
     {
-        case 0:
+        case CONNERTYPE_All:
+            corners = UIRectCornerAllCorners;
+            break;
+        case CONNERTYPE_BottomLeft:
             corners = UIRectCornerBottomLeft;
             break;
-        case 1:
+        case CONNERTYPE_BottomRight:
             corners = UIRectCornerBottomRight;
             break;
-        case 2:
+        case CONNERTYPE_TopLeft:
             corners = UIRectCornerTopLeft;
             break;
-        case 3:
+        case CONNERTYPE_TopRight:
             corners = UIRectCornerTopRight;
             break;
-        case 4:
+        case CONNERTYPE_BottomLeftAndBottomRight:
             corners = UIRectCornerBottomLeft | UIRectCornerBottomRight;
             break;
-        case 5:
-            corners = UIRectCornerTopLeft | UIRectCornerTopRight;
-            break;
-        case 6:
+        case CONNERTYPE_BottomLeftAndTopLeft:
             corners = UIRectCornerBottomLeft | UIRectCornerTopLeft;
             break;
-        case 7:
-            corners = UIRectCornerBottomRight | UIRectCornerTopRight;
+        case CONNERTYPE_BottomLeftAndTopRight:
+            corners = UIRectCornerBottomLeft | UIRectCornerTopRight;
             break;
-        case 8:
-            corners = UIRectCornerBottomRight | UIRectCornerTopRight | UIRectCornerTopLeft;
+        case CONNERTYPE_TopLeftAndTopRight:
+            corners = UIRectCornerTopLeft | UIRectCornerTopRight;
             break;
-        case 9:
-            corners = UIRectCornerBottomRight | UIRectCornerTopRight | UIRectCornerBottomLeft;
+        case CONNERTYPE_TopLeftAndTopBottomRight:
+            corners = UIRectCornerTopLeft | UIRectCornerBottomRight;
             break;
-        default:
+        case CONNERTYPE_BottomRightAndTopRight:
+            corners = UIRectCornerTopRight | UIRectCornerBottomRight;
+            break;
+        case CONNERTYPE_BottomLeftAndBottomRightAndTopRight:
+            corners = UIRectCornerBottomLeft | UIRectCornerTopRight | UIRectCornerBottomRight;
+            break;
+        case CONNERTYPE_TopLeftAndBottomRightAndTopRight:
+            corners = UIRectCornerTopLeft | UIRectCornerTopRight | UIRectCornerBottomRight;
+            break;
+        case CONNERTYPE_TopLeftAndBottomLeftAndBottomRight:
+            corners = UIRectCornerTopLeft | UIRectCornerBottomLeft | UIRectCornerBottomRight;
+            break;
+        case CONNERTYPE_TopLeftAndBottomLeftAndTopRight:
+            corners = UIRectCornerTopLeft | UIRectCornerBottomLeft | UIRectCornerTopRight;
+            break;
+            default:
             corners = UIRectCornerAllCorners;
             break;
     }
