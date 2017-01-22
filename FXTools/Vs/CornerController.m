@@ -19,19 +19,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(60, 10, WIDTH-120, WIDTH-120);
     [button setTitle:@"圆角位置" forState:UIControlStateNormal];
     [button addTarget:self action:@selector(clickTest:) forControlEvents:UIControlEventTouchUpInside];
-    [button setStyle:8 cornerRedius:(WIDTH-120)/2];
+    [button setConnerType:CONNERTYPE_TopLeftAndBottomLeftAndTopRight cornerRedius:(WIDTH-120)/2];
     button.backgroundColor=[[UIColor orangeColor]colorWithAlphaComponent:0.86];
     [self.view addSubview:button];
     
     _imgV=[[UIImageView alloc]initWithFrame:CGRectMake(60, button.bottom+40, WIDTH-120, WIDTH-120)];
     _imgV.image=[UIImage imageNamed:@"mohuImage.png"];
     _imgV.contentMode=UIViewContentModeScaleAspectFill;
-    [_imgV setStyle:10 cornerRedius:(WIDTH-120)/2];
+    [_imgV setConnerType:CONNERTYPE_TopLeftAndBottomLeftAndBottomRight cornerRedius:_imgV.width];
     [self.view addSubview:_imgV];
     
     [_imgV.layer removeAnimationForKey:@"rotation"];

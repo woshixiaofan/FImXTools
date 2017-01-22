@@ -49,7 +49,7 @@
     activeViewController.excludedActivityTypes = @[UIActivityTypeAirDrop,UIActivityTypeAssignToContact,UIActivityTypePrint,UIActivityTypePostToTwitter,UIActivityTypePostToFacebook,UIActivityTypePostToFlickr,UIActivityTypePostToVimeo];
     
     [self presentViewController:activeViewController animated:YES completion:nil];
-    activeViewController.completionWithItemsHandler = ^(UIActivityType type,BOOL completed,NSArray * returnedItems,NSError * activityError){
+    activeViewController.completionWithItemsHandler = ^(UIActivityType type,BOOL completed,NSArray * returnedItems,NSError * activityError) {
         
     };
 }
@@ -58,7 +58,7 @@
     SLComposeViewController *composeVc=[SLComposeViewController composeViewControllerForServiceType:SLServiceTypeSinaWeibo];
     [composeVc setInitialText:@"艾美阅读"];
     [composeVc addImage:[UIImage imageNamed:@"mohuImage"]];
-    [composeVc addURL:[NSURL URLWithString:@"http://www.imread.com"]];
+    [composeVc addURL:[NSURL URLWithString:@"https://www.imread.com"]];
     
     [self presentViewController:composeVc animated:YES completion:nil];
     

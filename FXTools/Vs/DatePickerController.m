@@ -73,7 +73,7 @@
     NSDateFormatter *formater = [[NSDateFormatter alloc] init];
     
     //设置日期格式
-    formater.dateFormat = @"yyyy-MM-dd";
+    formater.dateFormat = @"yyyy-MM-dd EEEE HH:mm:ss";
     
     NSString *dateStr = [formater stringFromDate:selectedDate];
     NSLog(@"%@",dateStr);
