@@ -80,11 +80,8 @@
 		E1CED8FC1E0BB97A0078F3D8 /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D2EE21E08E00600B9638A /* AlertController.m */; };
 		E1F538121E2CACCC00997E3A /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1F538111E2CACCC00997E3A /* city.plist */; };
 		E1F538151E2CADDD00997E3A /* PSCityPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F538141E2CADDD00997E3A /* PSCityPickerView.m */; };
-<<<<<<< HEAD
-=======
 		E1F538291E2DBF1000997E3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1F538281E2DBF1000997E3A /* Images.xcassets */; };
 		E1F5382D1E2DF20600997E3A /* launch_320_480@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1F5382C1E2DF20600997E3A /* launch_320_480@2x.png */; };
->>>>>>> master
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,12 +211,9 @@
 		E1F538111E2CACCC00997E3A /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
 		E1F538131E2CADDD00997E3A /* PSCityPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCityPickerView.h; sourceTree = "<group>"; };
 		E1F538141E2CADDD00997E3A /* PSCityPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCityPickerView.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
-=======
 		E1F538281E2DBF1000997E3A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E1F5382B1E2DC25700997E3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E1F5382C1E2DF20600997E3A /* launch_320_480@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch_320_480@2x.png"; sourceTree = "<group>"; };
->>>>>>> master
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,10 +300,7 @@
 				E16D2E941E08DD4000B9638A /* LaunchScreen.storyboard */,
 				E16D2E971E08DD4000B9638A /* Info.plist */,
 				E1F538111E2CACCC00997E3A /* city.plist */,
-<<<<<<< HEAD
-=======
 				E1F538281E2DBF1000997E3A /* Images.xcassets */,
->>>>>>> master
 				E16D2E8C1E08DD4000B9638A /* Supporting Files */,
 			);
 			path = FXTools;
@@ -582,10 +573,7 @@
 				E16D2F081E08E07200B9638A /* zx-video-player-volumeMute@2x.png in Resources */,
 				E1F538121E2CACCC00997E3A /* city.plist in Resources */,
 				E1A4DB8D1E13ACBC00548E88 /* 005.png in Resources */,
-<<<<<<< HEAD
-=======
 				E1F5382D1E2DF20600997E3A /* launch_320_480@2x.png in Resources */,
->>>>>>> master
 				E16D2E931E08DD4000B9638A /* Assets.xcassets in Resources */,
 				E16D2F091E08E07200B9638A /* zx-video-player-volumeMute@3x.png in Resources */,
 				E16D2F031E08E07200B9638A /* icon_8@2x.svg in Resources */,
