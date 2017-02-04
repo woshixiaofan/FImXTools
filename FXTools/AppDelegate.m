@@ -39,13 +39,14 @@
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:WX_AppID  appSecret:WX_AppSecret redirectURL:UM_Login_URL];
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:XL_AppKey  appSecret:XL_AppSecret redirectURL:XL_url];
     
+    //new year
     
     [IQKeyboardManager sharedManager].enable = YES;
     //如果产品需要当键盘弹起时，点击背景收起键盘，也是一行代码解决。
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
     //而当产品需要支持内联编辑(Inline Editing), 这就需要隐藏键盘上的工具条(默认打开)
     [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
-        
+
     return YES;
 }
 
