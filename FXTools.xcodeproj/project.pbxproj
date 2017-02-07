@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02D616D21E4A095E003A9B29 /* EPHighlightLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D616D11E4A095E003A9B29 /* EPHighlightLabel.m */; };
 		5E24CCBBD5F5143DFFCCE406 /* libPods-FXTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C43B3B75D322E58538042610 /* libPods-FXTools.a */; };
 		E1086CC31E232B87009E3E97 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E1086CC01E232B87009E3E97 /* UIColor+Extension.m */; };
 		E1086CC41E232B87009E3E97 /* UITextView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E1086CC21E232B87009E3E97 /* UITextView+Extension.m */; };
@@ -108,6 +109,8 @@
 
 /* Begin PBXFileReference section */
 		02358F62F54E759A0382953F /* Pods-FXTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FXTools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FXTools/Pods-FXTools.debug.xcconfig"; sourceTree = "<group>"; };
+		02D616D01E4A095E003A9B29 /* EPHighlightLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPHighlightLabel.h; sourceTree = "<group>"; };
+		02D616D11E4A095E003A9B29 /* EPHighlightLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPHighlightLabel.m; sourceTree = "<group>"; };
 		9937BFCD04EC1DB4C63DF84B /* Pods-FXTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FXTools.release.xcconfig"; path = "Pods/Target Support Files/Pods-FXTools/Pods-FXTools.release.xcconfig"; sourceTree = "<group>"; };
 		C43B3B75D322E58538042610 /* libPods-FXTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FXTools.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1086CBF1E232B87009E3E97 /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
@@ -334,6 +337,8 @@
 				E1CED8B41E0BB13A0078F3D8 /* CollectionViewCell.m */,
 				E1F538131E2CADDD00997E3A /* PSCityPickerView.h */,
 				E1F538141E2CADDD00997E3A /* PSCityPickerView.m */,
+				02D616D01E4A095E003A9B29 /* EPHighlightLabel.h */,
+				02D616D11E4A095E003A9B29 /* EPHighlightLabel.m */,
 			);
 			path = Cs;
 			sourceTree = "<group>";
@@ -662,6 +667,7 @@
 				E1086CC31E232B87009E3E97 /* UIColor+Extension.m in Sources */,
 				E16D2EBF1E08DFC200B9638A /* VoiceController.m in Sources */,
 				E1CED8AC1E0BACAF0078F3D8 /* UMLoginController.m in Sources */,
+				02D616D21E4A095E003A9B29 /* EPHighlightLabel.m in Sources */,
 				E1C63D281E1B6ECE009BE802 /* UIControl+recurClick.m in Sources */,
 				E16D2E8E1E08DD4000B9638A /* main.m in Sources */,
 				E1CED8AF1E0BAF680078F3D8 /* CollectionController.m in Sources */,
