@@ -10,6 +10,7 @@
 #import "Header.h"
 #import <AFNetworking.h>
 #import "TestModel.h"
+#import "EPHighlightLabel.h"
 @interface KeyboardController ()
 
 @end
@@ -20,10 +21,17 @@
     [super viewDidLoad];
     
     
-    UITextField *field = [[UITextField alloc]initWithFrame:CGRectMake(50, 300, WIDTH-100, 50)];
+    UITextField *field = [[UITextField alloc]initWithFrame:CGRectMake(50, 100, WIDTH-100, 50)];
     field.text=@"占位符";
     field.backgroundColor=[UIColor lightGrayColor];
     [self.view addSubview:field];
+    
+    
+    EPHighlightLabel *label=[[EPHighlightLabel alloc]initWithFrame:CGRectMake(50, 200, WIDTH-100, 50)];
+    label.backgroundColor=[UIColor orangeColor];
+    [self.view addSubview:label];
+    label.userInteractionEnabled=YES;
+    
 }
 
 - (void)didReceiveMemoryWarning {
